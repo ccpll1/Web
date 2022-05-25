@@ -1,0 +1,14 @@
+<h2 class="title">
+    Entrevistas
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let video of videos | paginate: { itemsPerPage: 10, currentPage: p }">
+        <div class=" card">
+        <iframe [src]="video.snippet.resourceId.videoId | youtubeSafeUrl" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+</div>
+<pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

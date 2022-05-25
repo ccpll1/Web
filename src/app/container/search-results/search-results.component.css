@@ -1,0 +1,18 @@
+span {
+    font-family: Work Sans;
+}
+
+a {
+    color: #579c63;
+    word-break: break-all;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.col-sm {
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 20px;
+}

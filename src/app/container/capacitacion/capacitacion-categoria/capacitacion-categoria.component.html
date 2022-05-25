@@ -1,0 +1,27 @@
+<h2 class="title">
+    {{categoria}}
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp | paginate: { itemsPerPage: 8, currentPage: p }">
+        <a routerLink="../{{item.categoria}}/{{item.titulo}}" class="card">
+            <img [src]="'https://server.ccpll.org/public/images/'+ item.categoria + '/' + item.imagen" alt="">
+            <article>
+                <h1>{{item.titulo}}</h1>
+                <p>
+                    <b>Fecha:</b> {{item.fecha | date:'longDate'}}
+                </p>
+                <p>
+                    <b>Hora:</b> {{item.hora | convertFrom24To12Format}}
+                </p>
+                <p>
+                    <b>Ingreso:</b> {{item.ingreso}}
+                </p>
+                <span><a>Ver más</a></span>
+            </article>
+        </a>
+    </div>
+</div>
+<pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

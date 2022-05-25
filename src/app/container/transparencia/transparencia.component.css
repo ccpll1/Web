@@ -1,0 +1,25 @@
+.list-trans ul {
+    padding-left: 1rem;
+}
+
+p {
+    text-align: justify;
+}
+
+.list-trans ul li {
+    margin: 0.5rem 0;
+    display: flex;
+    font-size: 17px;
+    position: relative;
+    padding: 0.2rem 2rem;
+    flex-direction: column;
+}
+
+.list-trans ul li:before {
+    content: '\00b7';
+    font-size: 80px;
+    left: 0;
+    top: -30px;
+    position: absolute;
+    color: #14387F;
+}

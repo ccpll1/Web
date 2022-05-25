@@ -1,0 +1,18 @@
+<h2 class="title">
+    ALQUILER DE INSTALACIONES
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp">
+        <a routerLink="../alquiler-de-instalaciones/{{item.titulo}}" class="card">
+            <img [src]="'https://server.ccpll.org/public/images/alquiler/' + item.portada" alt="">
+            <article>
+                <h1>{{item.titulo}}</h1>
+                <p><img src="./assets/img/icon/icon4.png" alt="" width="20">{{item.direccion}}</p>
+                <span>Leer Más >>></span>
+            </article>
+        </a>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

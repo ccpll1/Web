@@ -1,0 +1,140 @@
+table.dataTable > tbody {
+    background-color: transparent !important;
+}
+
+table.dataTable > tbody > tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--bg-card);
+    background-clip: border-box;
+    border: var(--border-card);
+    border-radius: 0.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 2px 4px rgb(15 34 58 / 12%);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.search {
+    padding: 0.8rem;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container i {
+    top: 50%;
+    position: absolute;
+    opacity: 0.8;
+    color: inherit;
+    transform: translateY(-50%);
+    transition: opacity 0.15s ease-in;
+    left: 10px;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.search-container input {
+    height: 36px;
+    border-radius: 50px;
+    text-indent: 30px;
+    cursor: pointer;
+    padding: 7px;
+    width: 100%;
+    touch-action: manipulation;
+    background-color: #f3f3f9;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+.filter-options {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    flex-direction: column;
+}
+
+.filter-options li {
+    position: relative;
+}
+.filter-options .ng-select.ng-select-single .ng-select-container,
+.filter-options .ng-select.ng-select-multiple .ng-select-container {
+    height: 38.04px !important;
+}
+
+.filter-options li .dropdown-menu {
+    top: 25px;
+}
+.pd-bt-1 {
+    padding: 0.8rem;
+}
+
+.list_secciones_ li {
+    padding: 0.5rem;
+}
+.list_secciones_ li a {
+    cursor: pointer;
+    color: #fff;
+    padding: 10px 30px 10px 20px;
+    font-size: 14px;
+    background-color: #14387f;
+    display: flex;
+    justify-content: space-between;
+}
+
+table.dataTable {
+    width: 100%;
+    clear: both;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: collapse;
+}
+
+.table thead tr,
+.table thead th {
+    border: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: transparent;
+}
+.table td,
+.table th {
+    margin-bottom: 10px;
+    border: none;
+    padding: 0.3rem;
+    line-height: 1.5;
+}
+.card article {
+    padding: 10px;
+}
+.card p {
+    font-size: 13px;
+    line-height: 16px;
+}
+@media only screen and (min-width: 960px) {
+    .flex-column {
+        flex-direction: row;
+    }
+    .search {
+        width: 25%;
+    }
+    .filter-options {
+        flex-direction: row;
+    }
+}

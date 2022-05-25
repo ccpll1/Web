@@ -1,0 +1,27 @@
+<h2 class="title">
+    Detalle estado de cuenta
+</h2>
+<div>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">
+                <p>Servicio</p>
+            </div>
+            <div class="col col-2">
+                <p>Fecha</p>
+            </div>
+            <div class="col col-3">
+                <p>Importe</p>
+            </div>
+        </li>
+        <li class="table-row" *ngFor="let item of datahistorial  | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="col col-1" data-label="Servicio:">{{item._DESCRIPCION}}</div>
+            <div class="col col-2" data-label="Fecha:">{{item._FECHA}}</div>
+            <div class="col col-3" data-label="Importe:">S/ {{item._IMPORTE}}</div>
+        </li>
+    </ul>
+    <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

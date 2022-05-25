@@ -1,0 +1,55 @@
+<h2 class="title">Biblioteca</h2>
+<div class="card flex-column">
+    <div class="search col-md-3 col-sm-6">
+        <span>Buscador</span>
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input [(ngModel)]="searchString" name="searchString" placeholder="Buscar..." type="text">
+        </div>
+    </div>
+    <ul class="filter-options">
+        <li *ngFor="let cats of dataFilter">
+            <div class="pd-bt-1">
+                <span>{{cats.alias}}</span>
+                <ng-select [items]="cats.det" [multiple]="true" bindLabel="name" [closeOnSelect]="false"
+                    (remove)="onChange(cats.filter,$event.value,$event.selected)"
+                    (add)="onChange(cats.filter,$event,true)">
+                    <ng-template ng-option-tmp let-item="item" let-item$="item$">
+                        <input type="checkbox" [ngModel]="item$.selected" [attr.id]="item" /> {{item}}
+                    </ng-template>
+                </ng-select>
+            </div>
+        </li>
+    </ul>
+</div>
+<div style="display: flex;flex-wrap: wrap;">
+    <div class="col-md-3">
+        <ul class="list_secciones_">
+            <li *ngFor="let item of secciones">
+                <a (click)="getListLibros(item.id)">
+                    <span>{{item.descripcion}}</span>
+                    <span>({{item.total}})</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-9 card">
+        <div class="band">
+            <div class="item"
+                *ngFor="let item of arrayfiltrado | filter : searchString | paginate: { itemsPerPage: 16, currentPage: pageIndex}; let index = index">
+                <a routerLink="../libros/{{item.titulo}}" class="card">
+                    <img [src]="'https://server.ccpll.org/public/images/libros/' + item.imagen" alt="">
+                    <article>
+                        <p>{{item.titulo}}</p>
+                        <p>{{item.id}}</p>
+                    </article>
+                </a>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="onPageChange($event)" previousLabel="Anterior" nextLabel="Siguiente"
+            responsive="true"></pagination-controls>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

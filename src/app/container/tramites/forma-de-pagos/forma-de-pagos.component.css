@@ -1,0 +1,221 @@
+.convenio {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.list-conv {
+    display: grid;
+    margin: auto;
+    grid-gap: 40px 0;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.descrip span.title {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    color: #00a1cd;
+    margin-bottom: 1rem;
+    font-family: Work-Bold;
+}
+
+.descrip span.title::after {
+    content: none;
+}
+
+.descrip {
+    width: 100%;
+    text-align: center;
+}
+
+.descrip span {
+    color: #14387f;
+    text-transform: uppercase;
+}
+
+.transf span {
+    font-size: 25px;
+}
+
+.schedule-main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    align-items: center;
+}
+
+.schedule {
+    text-align: left;
+}
+
+.schedule li {
+    padding-bottom: 0.5rem;
+}
+
+.schedule li span {
+    margin: 0;
+    text-transform: initial;
+    color: #000;
+}
+
+.schedule li p {
+    line-height: 20px;
+    text-align: center;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left;
+}
+
+.info-item span {
+    margin: 0;
+}
+
+.contact-phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 3rem;
+    align-items: center;
+}
+
+span img {
+    width: 20px;
+}
+
+p {
+    line-height: 15px;
+}
+
+p.import {
+    border-radius: 10px;
+    text-align: center;
+    white-space: normal;
+    padding: 0.5rem 1rem;
+    background-color: #14387F;
+    border-color: rgb(219, 230, 252);
+    color: #fff;
+    line-height: 16px;
+}
+
+.convenio.deps button, .convenio.canal button {
+    text-align: left;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+    padding: 1rem 0;
+}
+
+.convenio.deps .email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.convenio.canal p.import {
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.lst-t {
+    display: flex;
+    align-items: center;
+}
+
+.lst-t img {
+    width: 20px;
+    height: 100%;
+}
+
+.lst-t p {
+    color: #000;
+}
+
+.convenio.deps ul li {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.list-bank {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.cards span {
+    color: #14387f;
+    font-size: 20px;
+    font-family: Work Sans;
+}
+
+.list-cards {
+    margin-top: 1rem;
+}
+
+.list-cards img {
+    margin: 0 1rem;
+}
+
+.deps ul li p.import {
+    font-size: 14px;
+}
+
+.apps {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+@media only screen and (min-width: 960px) {
+    .list-conv {
+        width: 80%;
+        grid-gap: 50px 120px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .convenio {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    button {
+        font-size: 16px;
+    }
+    .contact-phone {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .convenio.deps .email button, .convenio.canal button {
+        width: 65%;
+    }
+    .convenio.deps button, .convenio.canal button {
+        width: 85%;
+    }
+    .convenio.canal p.import {
+        width: 85%;
+    }
+    .convenio.deps ul li {
+        flex-direction: row;
+    }
+    .list-cards {
+        display: flex;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,21 @@
+<h2 class="title" *ngIf="item !=null">
+    Alquiler de Instalaciones
+</h2>
+<div class="info" *ngIf="item !=null">
+    <div class="img-info">
+        <img [src]="item.portada" alt="">
+    </div>
+    <div class="info-detail">
+        <h2 class="title-blog">{{item.titulo}}</h2>
+        <p [innerHTML]="item.descripcion | innerhtml">
+        </p>
+        <ngx-masonry>
+            <div ngxMasonryItem class="masonry-item" *ngFor="let url of images">
+                <img [src]="url" (click)="imagemodal(url)">
+            </div>
+        </ngx-masonry>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

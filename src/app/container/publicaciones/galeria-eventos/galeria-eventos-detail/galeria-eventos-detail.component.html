@@ -1,0 +1,12 @@
+<div class="info-detail" *ngIf="item !=null">
+    <h2 class="title-blog">{{item.titulo}}</h2>
+    <p>{{item.descripcion}}</p>
+    <ngx-masonry>
+        <div ngxMasonryItem class="masonry-item" *ngFor="let url of images">
+            <img [src]="url" (click)="imagemodal(url)">
+        </div>
+    </ngx-masonry>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

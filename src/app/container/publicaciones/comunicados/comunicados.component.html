@@ -1,0 +1,21 @@
+<h2 class="title">
+    Comunicados
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp | paginate: { itemsPerPage: 10, currentPage: p }">
+        <a class="card">
+            <img [src]="'https://server.ccpll.org/public/images/comunicados/'+ item.imagen" alt=""
+            [swal]="show" (click)="imagen = item.imagen">
+        </a>
+    </div>
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>
+
+<swal #show>
+    <div class="modal" *swalPortal>
+        <img [src]="'https://server.ccpll.org/public/images/comunicados/' + imagen" alt="">
+    </div>
+</swal>

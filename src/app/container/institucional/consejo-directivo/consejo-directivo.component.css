@@ -1,0 +1,113 @@
+.consejodirectv {
+    text-align: justify;
+}
+
+.decano {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.modal .perfil {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perfil-inf p {
+    letter-spacing: -1px;
+    color: #00a1cd;
+    font-size: 17px;
+    font-family: Work-Bold;
+    line-height: 20px;
+}
+
+.perfil-inf span {
+    font-size: 18px;
+    letter-spacing: -1px;
+    line-height: 20px;
+    color: #14387F;
+}
+
+.consejo {
+    text-align: center;
+}
+
+.modal {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.consejo img, .decano img, .modal img {
+    width: 200px;
+    border-radius: 50%;
+    border: solid 6px #14387F;
+    overflow: hidden;
+}
+
+.modal .cv {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.modal .cv ul {
+    padding-bottom: 2rem;
+}
+
+.modal .cv ul span {
+    color: #00a1cd;
+}
+
+.modal .cv ul li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.modal .cv ul li::before {
+    content: '\00b7';
+    font-size: 60px;
+    left: 0;
+    position: absolute;
+    color: #14387F;
+}
+
+.consejo .perfil {
+    padding-bottom: 3rem;
+}
+
+.modal .perfil-inf {
+    padding-top: 1rem;
+}
+
+.modal .perfil-inf span {
+    font-size: 25px;
+}
+
+@media only screen and (min-width: 960px) {
+    .consejodirectv img {
+        float: left;
+    }
+    .modal {
+        flex-direction: row;
+    }
+    .modal .perfil {
+        width: 40%
+    }
+    .cv {
+        width: 60%;
+        padding-left: 1rem;
+    }
+}

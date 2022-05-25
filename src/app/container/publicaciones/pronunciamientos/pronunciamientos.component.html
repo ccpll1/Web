@@ -1,0 +1,21 @@
+<h2 class="title">
+    PRONUNCIAMIENTOS
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp">
+        <a routerLink="../pronunciamientos/{{item.titulo}}" class="card">
+            <img [src]="'https://server.ccpll.org/public/images/PRONUNCIAMIENTOS/' + item.imagen" alt="">
+            <article>
+                <h1>{{item.titulo}}</h1>
+                <p [innerHTML]="item.descripcion | innerhtml"></p>
+                <div class="group-spn">
+                    <span><img src="./assets/img/icon/icon5.png" alt="">{{item.datecreation | date:'dd/MM/yyyy'}}</span>
+                    <span>Leer Más</span>
+                </div>
+            </article>
+        </a>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

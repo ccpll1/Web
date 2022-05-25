@@ -1,0 +1,47 @@
+.historia img {
+    padding-bottom: 1rem;
+}
+
+.historia {
+    padding: 0 15px;
+    padding-top: 3rem;
+    text-align: justify;
+}
+
+.misvis {
+    display: flex;
+    flex-direction: column;
+}
+
+.misvis>div {
+    text-align: center;
+}
+
+.mision, .vision {
+    padding: 0 15px;
+    padding-top: 2rem;
+    text-align: justify;
+}
+
+.historia p {
+    column-count: 1;
+}
+
+@media only screen and (min-width: 960px) {
+    .historia img {
+        float: left;
+    }
+    .misvis {
+        flex-direction: row;
+    }
+    .historia p {
+        column-count: 3;
+    }
+    .misvis>div {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}

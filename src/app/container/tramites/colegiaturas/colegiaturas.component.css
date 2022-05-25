@@ -1,0 +1,107 @@
+.title {
+    margin: 0;
+}
+
+.subtitle {
+    color: #00a1cd;
+    font-size: 30px;
+    text-align: center;
+}
+
+.cole-main ul li {
+    padding: 0.7rem 4rem;
+    color: #000;
+    counter-increment: my-awesome-counter;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 17px;
+}
+
+.cole-main ul li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: #14387F;
+    font-size: 55px;
+    font-family: 'Work-Bold';
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.cole-main {
+    border-bottom: 1px solid #00a1cd;
+    padding: 3rem 0;
+    width: 90%;
+    margin: auto;
+}
+
+.cole-dc {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    width: 100%;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.card h1 {
+    text-align: center;
+    font-family: Work Sans;
+    text-transform: uppercase;
+}
+
+.note {
+    margin: 3rem auto;
+}
+
+.note ul li {
+    margin: 0.5rem 0;
+    display: flex;
+    font-size: 17px;
+    position: relative;
+    padding: 0.2rem 2rem;
+    flex-direction: column;
+}
+
+.note ul li:before {
+    content: '\00b7';
+    font-size: 80px;
+    left: 0;
+    top: -30px;
+    position: absolute;
+    color: #14387F;
+}
+
+.card p {
+    text-align: justify;
+    display: block;
+}
+
+.card-note-ti {
+    color: #00a1cd;
+    font-size: 25px;
+    font-family: Work-Bold;
+}
+
+@media only screen and (min-width: 960px) {
+    .cole-main ul li::before {
+        bottom: 0;
+        top: inherit;
+    }
+    .cole-dc {
+        flex-direction: row;
+    }
+    .card {
+        width: 70%;
+        height: 100%;
+    }
+    .new-requis {
+        column-count: 2;
+    }
+    .new-requis li {
+        float: left;
+    }
+}

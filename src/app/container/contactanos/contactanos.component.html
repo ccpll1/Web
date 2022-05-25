@@ -1,0 +1,86 @@
+<p class="subtitle">En el Colegio de Contadores Públicos de La Libertad estamos a tu disposición para ayudarte con la
+    información que solicites. Escríbenos en el siguiente formulario y te responderemos lo más pronto posible.
+    Consulta también en los datos de contacto de la parte inferior de la web.</p>
+
+<div class="colaboradores">
+    <h2>Consulta con nuestros colaboradores</h2>
+    <div class="list-colaboradores">
+        <div class="item-colaboradores">
+            <img src="./assets/img/colaboradores/lucia.png" alt="">
+            <div>
+                <span>Mesa de Partes</span>
+                <p><b>Encargada:</b> Lucía Aranda Reyes</p>
+                <p><b>Correo:</b> mesadepartes@ccpll.org</p>
+                <p><b>Teléfono:</b> 044 - 250204</p>
+            </div>
+        </div>
+        <div class="item-colaboradores">
+            <img src="./assets/img/colaboradores/pablo.png" alt="">
+            <div>
+                <span>Tesorería</span>
+                <p><b>Encargado:</b> Pablo Romero Romero</p>
+                <p><b>Correo:</b> tesoreria@ccpll.org</p>
+                <p><b>Teléfono:</b> 044 - 257353</p>
+            </div>
+        </div>
+        <div class="item-colaboradores">
+            <img src="./assets/img/colaboradores/alberto.png" alt="">
+            <div>
+                <span>Promotor de Servicios</span>
+                <p><b>Encargado:</b> Alberto Moreno Fuentes</p>
+                <p><b>Correo:</b> secretaria@ccpll.org</p>
+                <p><b>Teléfono:</b> 044 - 245641</p>
+                <p><b>Celular:</b> +51 948315611</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-contact">
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8768878926257!2d-79.0351965852198!3d-8.114015994158748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d9d058502d9%3A0xea16618ec3b0afd9!2sColegio%20de%20Contadores%20Publicos%20de%20la%20Libertad!5e0!3m2!1ses!2spe!4v1590038444989!5m2!1ses!2spe"
+            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+            tabindex="0"></iframe>
+    </div>
+    <div class="formul">
+        <form [formGroup]="formulario" (ngSubmit)="save()">
+            <div class="form-group">
+                <label for="label">NOMBRES <b>*</b></label>
+                <input class="form-control ng-pristine ng-invalid ng-touched" formControlName="nombre"
+                    placeholder="Nombres" type="text">
+                <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                    <p *ngIf="f.nombre.errors.required">Este campo es requerido</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="label">CORREO ELECTRÓNICO <b>*</b></label>
+                <input class="form-control ng-pristine ng-invalid ng-touched" formControlName="email"
+                    placeholder="Correo Electrónico" type="text">
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <p *ngIf="f.email.errors.required">Este campo es requerido</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="label">ASUNTO <b>*</b></label>
+                <select class="form-control" style="width: 100%" formControlName="asunto"
+                    [ngClass]="{ 'is-invalid': submitted && f.asunto.errors }">
+                    <option *ngFor="let item of asuntos" value="{{item.value}}">{{item.value}}
+                    </option>
+                </select>
+                <div *ngIf="submitted && f.asunto.errors" class="invalid-feedback">
+                    <div *ngIf="f.asunto.errors.required">Este campo es requerido</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="label">MENSAJE <b>*</b></label>
+                <textarea class="form-control ng-pristine ng-invalid ng-touched" formControlName="mensaje"
+                    placeholder="Mensaje" type="text" rows="5"></textarea>
+                <div *ngIf="submitted && f.mensaje.errors" class="invalid-feedback">
+                    <p *ngIf="f.mensaje.errors.required">Este campo es requerido</p>
+                </div>
+            </div>
+            <button>ENVIAR MENSAJE</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<h2 class="title">
+    INFORMATIVO {{categoria}}
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icon/informativo.png" alt="">
+                <h1>{{item.name.replace('.pdf', '')}}</h1>
+            </div>
+        </article>
+        <a (click)="downloadFile(item)"><span>Descargar</span></a>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

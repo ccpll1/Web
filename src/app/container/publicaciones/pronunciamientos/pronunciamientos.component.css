@@ -1,0 +1,48 @@
+.card article {
+    padding: 1rem;
+}
+
+.card p {
+    margin-top: 0;
+    line-height: 15px;
+}
+
+.card span {
+    cursor: pointer;
+    padding-top: 0;
+    border: 2px solid #00a1cd;
+    padding: 0px 10px;
+    border-radius: 10px;
+    color: #00a1cd;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.group-spn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.group-spn img {
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+}
+
+article>p {
+    display: -webkit-box;
+    margin: 0 auto;
+    font-size: 14px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 960px) {
+    .band {
+        grid-gap: 50px 100px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

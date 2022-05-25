@@ -1,0 +1,26 @@
+<h2 class="title" *ngIf="item !=null">
+    {{item.categoria}}
+</h2>
+<div class="item" *ngIf="item !=null">
+    <div>
+        <img [src]="'https://server.ccpll.org/public/images/' + item.categoria + '/' + item.imagen" alt="">
+    </div>
+    <article>
+        <h1>{{item.titulo}}</h1>
+        <p>
+            <b>Fecha:</b> {{item.fecha | date:'longDate'}}
+        </p>
+        <p>
+            <b>Hora:</b> {{item.hora | convertFrom24To12Format}}
+        </p>
+        <p>
+            <b>Ingreso:</b> {{item.ingreso}}
+        </p>
+        <b>Información:</b><br>
+        <p [innerHTML]="item.descripcion | innerhtml">
+        </p>
+    </article>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

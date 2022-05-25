@@ -1,0 +1,103 @@
+<h2 class="title">
+    Instrumentos de Gestión y Control
+</h2>
+<div class="band">
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon11.png" alt="">
+                <h1>Plan de trabajo</h1>
+            </div>
+        </article>
+        <a href="./assets/archives/PLAN DE TRABAJO.pdf" download="PLAN DE TRABAJO"><span>Descargar</span></a>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon12.png" alt="">
+                <h1>Plan estratégico institucional 2022-2025</h1>
+            </div>
+        </article>
+        <a href="./assets/archives/PLAN ESTRATÉGICO INSTITUCIONAL 2022-2025.pdf.pdf"
+            download="PLAN ESTRATÉGICO INSTITUCIONAL 2022-2025.pdf"><span>Descargar</span></a>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon12.png" alt="">
+                <h1>REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD</h1>
+            </div>
+        </article>
+        <a href="./assets/archives/REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD.pdf"
+            download="REGLAMENTO DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD"><span>Descargar</span></a>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon12.png" alt="">
+                <h1>MANUAL DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD</h1>
+            </div>
+        </article>
+        <a href="./assets/archives/MANUAL DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD.pdf"
+            download="MANUAL DE ORGANIZACIÓN Y FUNCIONES DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD"><span>Descargar</span></a>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon12.png" alt="">
+                <h1>MANUAL DE PROCEDIMIENTOS DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD</h1>
+            </div>
+        </article>
+        <a href="./assets/archives/MANUAL DE PROCEDIMIENTOS DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD.pdf"
+            download="MANUAL DE PROCEDIMIENTOS DEL COLEGIO DE CONTADORES PÚBLICOS DE LA LIBERTAD"><span>Descargar</span></a>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon13.png" alt="">
+                <h1>Plan Operativo</h1>
+            </div>
+        </article>
+    </div>
+    <div class="item">
+        <article class="card">
+            <div>
+                <img src="./assets/img/icons/icon14.png" alt="">
+                <h1>Presupuesto</h1>
+            </div>
+        </article>
+        <a [swal]="show"><span>Visualizar</span></a>
+    </div>
+</div>
+
+<swal #show>
+    <div class="modal" *swalPortal>
+        <div class="options-modal">
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Presupuesto Institucional 2020.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Presupuesto Institucional 2020.pdf'}">Presupuesto
+                Institucional Anual 2020</span>
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Anexos al Presupuesto Institucional 2020.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Anexos al Presupuesto Institucional 2020.pdf'}">Anexos
+                al Presupuesto Institucional 2020</span>
+            <span
+                (click)="pdfSrc = 'https://ccpll.org/assets/archives/Ejecución del Presupuesto Institucional 2020.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Ejecución del Presupuesto Institucional 2020.pdf'}">Ejecución
+                del Presupuesto Institucional 2020</span>
+
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Presupuesto Institucional 2021.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Presupuesto Institucional 2021.pdf'}">Presupuesto
+                Institucional 2021</span>
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Anexos al Presupuesto Egresos 2021.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Anexos al Presupuesto Egresos 2021.pdf'}">Anexos
+                al Presupuesto Egresos 2021</span>
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Anexos al Presupuesto Ingresos 2021.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Anexos al Presupuesto Ingresos 2021.pdf'}">Anexos
+                al Presupuesto Ingresos 2021</span>
+            <span (click)="pdfSrc = 'https://ccpll.org/assets/archives/Anexos al Presupuesto Recursos Humanos.pdf'"
+                [ngClass]="{'active-option': pdfSrc === 'https://ccpll.org/assets/archives/Anexos al Presupuesto Recursos Humanos.pdf'}">Anexos
+                al Presupuesto Recursos Humanos</span>
+        </div>
+        <pdf-viewer [src]="pdfSrc" [autoresize]="true" [render-text]="false" style="display: block;">
+        </pdf-viewer>
+    </div>
+</swal>

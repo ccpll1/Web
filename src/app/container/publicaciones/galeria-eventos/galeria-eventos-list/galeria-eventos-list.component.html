@@ -1,0 +1,16 @@
+<h2 class="title">
+    GALERÍA DE EVENTOS
+</h2>
+<div class="band">
+    <div class="item" *ngFor="let item of dataTemp">
+        <a routerLink="../galeria-de-eventos/{{item.titulo}}" class="card">
+            <img [src]="'https://server.ccpll.org/public/images/evento/' + item.portada" alt="">
+            <article>
+                <h1>{{item.titulo}}</h1>
+            </article>
+        </a>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

@@ -1,0 +1,49 @@
+<h2 class="title">
+    Documentos con firma Digital
+</h2>
+<p class="subtitle">
+    Consulte a través del buscador con su número de matrícula
+</p>
+<div class="search">
+    <form [formGroup]="formulario" (ngSubmit)="search()">
+        <input type="text" class="form-control" placeholder="Número de Matrícula" formControlName="word"
+            [ngClass]="{ 'is-invalid': submitted && f.word.errors }">
+        <div *ngIf="submitted && f.word.errors" class="invalid-feedback">
+            <p *ngIf="f.word.errors.required">Ingrese número de matrícula</p>
+        </div>
+        <div class="group-button ">
+            <button id="buscar" type="button" class="btn btn-primary" (click)="search()">
+                <i class=" fas fa-search"></i>
+                BUSCAR</button>
+            <button type="reset" class="btn btn-default disabled"><i class="fas fa-times"></i> LIMPIAR</button>
+        </div>
+    </form>
+</div>
+<ul class="responsive-table" *ngIf="dataTemp != null">
+    <span>
+        {{dataTemp.nombres}} {{dataTemp.apellidos}}
+    </span>
+    <li class="table-header">
+        <div class="col col-1">
+            <p>Descripción</p>
+        </div>
+        <div class="col col-2">
+            <p>Fecha Emisión</p>
+        </div>
+        <div class="col col-3">
+            <p>Duración</p>
+        </div>
+        <div class="col col-3">
+            <p>Opción</p>
+        </div>
+    </li>
+    <li class="table-row" *ngFor="let certificado of dataTemp.certificados">
+        <div class="col col-1" data-label="Descripción:">{{certificado.DESCRIPCION}}</div>
+        <div class="col col-2" data-label="Fecha Emisión:">{{certificado.FECHA_EMISION}}</div>
+        <div class="col col-3" data-label="Duración:">{{certificado.CANTIDAD_MESES}}</div>
+        <div class="col col-3" data-label="Duración:"><a (click)="descargarPDF(certificado)">Descargar</a></div>
+    </li>
+</ul>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

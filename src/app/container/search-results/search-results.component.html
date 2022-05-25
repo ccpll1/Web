@@ -1,0 +1,11 @@
+<div class="text-center" *ngIf="searchResult.length > 0">
+    <div class="row" *ngFor="let result of searchResult | paginate: { itemsPerPage: 10, currentPage: p }; index as i">
+        <div class="col-sm" *ngFor="let item of result.items">
+            <h3 class="cust-search-heading"> <span [innerHTML]="item.htmlTitle"></span>
+            </h3>
+            <span class="cust-search-link"><a href="{{item.formattedUrl}}">{{item.formattedUrl}}</a></span>
+            <p class="cust-search-htmlSnippet">{{item.snippet}}</p>
+        </div>
+    </div>
+    <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>

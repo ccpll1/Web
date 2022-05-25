@@ -1,0 +1,269 @@
+<div class="header-menu">
+	<div class="pre-menu">
+		<div class="logo">
+			<a routerLink="/">
+				<img src="./assets/img/logo.png" alt="">
+			</a>
+		</div>
+		<ul>
+			<li>
+				<div class="search">
+					<input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchproducto"
+						(keyup.enter)="search()" [@slideInOut]="menuState">
+					<i class="fas fa-search" (click)="toggleMenu()"></i>
+				</div>
+			</li>
+			<li><a routerLink="/biblioteca/libros"><i class="fas fa-book"></i>Biblioteca</a></li>
+			<li><a href="http://aulavirtual.ccpll.org/login/index.php" target="_blank"><i class="fas fa-book"></i>Aula
+					virtual</a></li>
+			<li (click)="clickedInside($event)">
+				<a *ngIf="!isSignedIn" routerLink="login"><i class="fas fa-user"></i>Usuario</a>
+				<a *ngIf="isSignedIn"><span class="user-name" (click)="this.showProfile = !this.showProfile;">
+						{{usersesion._DATOSPERSONALES}}
+						<i class="fas fa-angle-down"></i>
+					</span></a>
+				<div class="dropdown-menu profile" *ngIf="showProfile" (click)="clickedInside($event)">
+					<ul>
+						<li class="clearfix" (click)="clickedOutside($event)"
+							routerLink="usuario/historial-estado-cuenta">
+							<i class="far fa-user"></i>
+							Estado de cuenta
+						</li>
+						<li class="clearfix" (click)="clickedOutside($event)" routerLink="usuario/reset-password">
+							<i class="fas fa-unlock-alt"></i>
+							Cambiar contraseña
+						</li>
+						<li class="clearfix" (click)="logOut()">
+							<i class="fas fa-sign-out-alt"></i>
+							Cerrar sesión
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="device">
+		<button id="burger" class="open-main-nav" (click)="openMenu(showMenu)"
+			[ngClass]="{'is-open': showMenu === true}">
+			<span class="burger"></span>
+		</button>
+		<nav class="main-nav" id="main-nav" [ngClass]="{'is-open': showMenu === true}">
+			<ul class="menu-primary">
+				<li>
+					<a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/"
+						(click)="closeMenu()"><span>INICIO</span></a>
+				</li>
+				<li routerLinkActive="active">
+					<div class="submenu-opt">
+						<a><span>INSTITUCIONAL</span></a>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<div class="sub-menu">
+						<ul>
+							<li>
+								<a routerLink="/institucional/historia" (click)="closeMenu()">Historia,
+									Misión y Visión</a>
+							</li>
+							<li>
+								<a routerLink="/institucional/normas-institucionales" (click)="closeMenu()">Normas
+									Institucionales</a>
+							</li>
+							<li>
+								<a routerLink="/institucional/consejo-directivo" (click)="closeMenu()">Consejo
+									Directivo</a>
+							</li>
+							<li>
+								<a routerLink="/institucional/organos-institucionales" (click)="closeMenu()">Órganos
+									Institucionales</a>
+							</li>
+							<li>
+								<a routerLink="/institucional/comisiones-tecnicas-y-de-estudio"
+									(click)="closeMenu()">Comisiones
+									técnicas y de estudio</a>
+							</li>
+							<li>
+								<a routerLink="/institucional/instrumentos-de-gestion-y-control"
+									(click)="closeMenu()">Instrumentos de
+									gestión y control</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a routerLinkActive="active" routerLink="/transparencia"
+						(click)="closeMenu()"><span>TRANSPARENCIA</span></a>
+				</li>
+				<li routerLinkActive="active">
+					<div class="submenu-opt">
+						<a><span>CONSULTAS</span></a>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<div class="sub-menu">
+						<ul>
+							<li>
+								<a routerLink="/consultas/documentos-con-firma-electronica"
+									(click)="closeMenu()">Documentos con firma
+									digital</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/habilidad-del-contador" (click)="closeMenu()">Habilidad
+									del contador</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/habilidad-de-sociedad-de-auditoria"
+									(click)="closeMenu()">Habilidad de
+									sociedad de auditoría</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/registro-de-auditores-independientes"
+									(click)="closeMenu()">Registro
+									de auditores independientes</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/registro-de-peritos-contables" (click)="closeMenu()">Registro
+									de peritos
+									contables</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/convenios" (click)="closeMenu()">Convenios</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/beneficios-colegiados" (click)="closeMenu()">Beneficios
+									colegiados</a>
+							</li>
+							<li>
+								<a routerLink="/consultas/seguro-mutual" (click)="closeMenu()">Seguro mutual</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li routerLinkActive="active">
+					<div class="submenu-opt">
+						<a><span>TRÁMITES</span></a>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<div class="sub-menu">
+						<ul>
+							<li>
+								<a routerLink="/tramites/mesa-de-partes-virtual" (click)="closeMenu()">Mesa de
+									partes virtual</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/forma-de-pagos" (click)="closeMenu()">Formas de
+									pagos</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/colegiaturas" (click)="closeMenu()">Colegiaturas</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/inscripcion-de-sociedades-de-audtoria"
+									(click)="closeMenu()">Inscripción de sociedades de auditoría</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/cuota-ordinaria" (click)="closeMenu()">Cuota ordinaria</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/seguro-mutual" (click)="closeMenu()">Seguro mutual</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/constancia-de-habilidad" (click)="closeMenu()">Constancia
+									de
+									habilidad</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/duplicados" (click)="closeMenu()">Duplicados</a>
+							</li>
+							<li>
+								<a routerLink="/tramites/alquiler-de-instalaciones" (click)="closeMenu()">Alquiler
+									de
+									instalaciones</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li routerLinkActive="active">
+					<div class="submenu-opt">
+						<a><span>CAPACITACIÓN</span></a>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<div class="sub-menu">
+						<ul>
+							<li>
+								<a routerLink="/capacitacion/transmisiones" (click)="closeMenu()">Transmisiones en
+									vivo</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/entrevistas" (click)="closeMenu()">Entrevistas</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/cursos" (click)="closeMenu()">Cursos</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/seminarios" (click)="closeMenu()">Seminarios</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/diplomaturas" (click)="closeMenu()">Diplomaturas</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/congresos" (click)="closeMenu()">Congresos</a>
+							</li>
+							<li>
+								<a routerLink="/capacitacion/informes" (click)="closeMenu()">Informes</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li routerLinkActive="active">
+					<div class="submenu-opt">
+						<a><span>PUBLICACIONES</span></a>
+						<i class="fas fa-angle-down"></i>
+					</div>
+					<div class="sub-menu">
+						<ul>
+							<li>
+								<a routerLink="/publicaciones/noticias" (click)="closeMenu()">Noticias</a>
+							</li>
+							<li>
+								<a routerLink="/publicaciones/comunicados" (click)="closeMenu()">Comunicados</a>
+							</li>
+							<li>
+								<a routerLink="/publicaciones/pronunciamientos"
+									(click)="closeMenu()">Pronunciamientos</a>
+							</li>
+							<li>
+								<a routerLink="/publicaciones/revista" (click)="closeMenu()">Revista</a>
+							</li>
+							<li>
+								<a class="sub-menu-a">Informativos</a>
+								<div class="sub-sub-menu">
+									<ul>
+										<li>
+											<a routerLink="/publicaciones/informativos/contable"
+												(click)="closeMenu()">Contable</a>
+										</li>
+										<li>
+											<a routerLink="/publicaciones/informativos/tributario"
+												(click)="closeMenu()">Tributario</a>
+										</li>
+										<li>
+											<a routerLink="/publicaciones/informativos/laboral"
+												(click)="closeMenu()">Laboral</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a routerLink="/publicaciones/galeria-de-eventos" (click)="closeMenu()">Galería de
+									eventos</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a routerLinkActive="active" routerLink="/contacto"
+						(click)="closeMenu()"><span>CONTÁCTENOS</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>

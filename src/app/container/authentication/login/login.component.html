@@ -1,0 +1,23 @@
+<div class="container-auth">
+    <form [formGroup]="formulario" (ngSubmit)="login()">
+        <div class="form-group">
+            <label for="email">Usuario</label>
+            <input placeholder="12345678" class="form-control" type="text" formControlName="user"
+                [ngClass]="{ 'is-invalid': submitted && f.user.errors }" maxlength="8">
+        </div>
+        <div class="form-group">
+            <div class="forget-pass">
+                <label for="email">Contraseña</label>
+            </div>
+            <input placeholder="*******" class="form-control" type="password" formControlName="passw"
+                [ngClass]="{ 'is-invalid': submitted && f.passw.errors }">
+        </div>
+        <div *ngIf="usuarioincorrecto" class="show invalid-feedback">
+            <p>{{mensajelogg}}</p>
+        </div>
+        <button type="submit" class="btn-primary">Inicia Sesión</button>
+    </form>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

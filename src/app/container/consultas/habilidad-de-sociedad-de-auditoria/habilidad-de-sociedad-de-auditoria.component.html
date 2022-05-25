@@ -1,0 +1,48 @@
+<h2 class="title">
+  Habilidad de sociedad de auditoría
+</h2>
+<p class="subtitle">
+  Consulte a través del buscador con su número de RUC o nombre de sociedad.
+</p>
+<div class="search">
+  <form [formGroup]="formulario" (ngSubmit)="search()">
+    <input type="text" class="form-control" placeholder="RUC o nombre de sociedad" formControlName="word"
+      [ngClass]="{ 'is-invalid': submitted && f.word.errors }" maxlength="8">
+    <div *ngIf="submitted && f.word.errors" class="invalid-feedback">
+      <p *ngIf="f.word.errors.required">Ingrese RUC</p>
+    </div>
+    <div class="group-button ">
+      <button id="buscar" type="button" class="btn btn-primary" (click)="search()">
+        <i class="fas fa-search"></i>
+        BUSCAR</button>
+      <button type="reset" class="btn btn-default disabled"><i class="fas fa-times"></i> LIMPIAR</button>
+    </div>
+  </form>
+</div>
+<div *ngIf="dataTemp != null">
+  <ul class="responsive-table">
+    <li class="table-header">
+      <div class="col col-1">
+        <p>Nombres</p>
+      </div>
+      <div class="col col-2">
+        <p>DNI</p>
+      </div>
+      <div class="col col-3">
+        <p>N° Colegiatura</p>
+      </div>
+      <div class="col col-4">
+        <p>Estado</p>
+      </div>
+    </li>
+    <li class="table-row">
+      <div class="col col-1" data-label="Nombres:">{{dataTemp._DATOS_PERSONALES}}</div>
+      <div class="col col-2" data-label="DNI:">{{dataTemp._DNI_COLEGIADO}}</div>
+      <div class="col col-3" data-label="N° Colegiatura:">{{dataTemp._CODIGO}}</div>
+      <div class="col col-4" data-label="Estado:">{{dataTemp._ESTADO_COLEGIADO}}</div>
+    </li>
+  </ul>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+  <div class="circle-loader"></div>
+</div>

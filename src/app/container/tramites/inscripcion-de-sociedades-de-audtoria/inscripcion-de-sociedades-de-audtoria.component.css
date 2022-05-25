@@ -1,0 +1,44 @@
+.main ul {
+    padding-left: 1rem;
+}
+
+.main ul li {
+    padding: 0.7rem 4rem;
+    color: #000;
+    counter-increment: my-awesome-counter;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 17px;
+    text-align: justify;
+}
+
+.main ul li::before {
+    content: counter(my-awesome-counter) ". ";
+    color: #14387F;
+    font-size: 55px;
+    font-family: 'Work-Bold';
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.main ul ul>li {
+    counter-increment: none;
+}
+
+.main ul ul>li::before {
+    content: none;
+}
+
+@media only screen and (min-width: 960px) {
+    .main {
+        width: 80%;
+        margin: auto;
+    }
+    .main ul li::before {
+        bottom: 0;
+        top: inherit;
+    }
+}

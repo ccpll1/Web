@@ -1,0 +1,62 @@
+ ul {
+     padding-left: 1rem;
+ }
+
+ ul li {
+     padding: 0.7rem 4rem;
+     color: #000;
+     counter-increment: my-awesome-counter;
+     margin: 2rem 0;
+     display: flex;
+     align-items: center;
+     position: relative;
+     font-size: 17px;
+ }
+
+ ul li:nth-child(2) {
+     left: 2rem;
+ }
+
+ ul li:nth-child(3) {
+     left: 3rem;
+ }
+
+ ul li:nth-child(4) {
+     left: 4rem;
+ }
+
+ ul li::before {
+     content: counter(my-awesome-counter) ". ";
+     color: #14387F;
+     font-size: 55px;
+     font-family: 'Work-Bold';
+     left: 0;
+     top: 0;
+     position: absolute;
+ }
+
+ .main {
+     display: flex;
+     justify-content: center;
+     width: 60%;
+     align-items: center;
+     margin: auto;
+ }
+
+ @media only screen and (min-width: 960px) {
+     .main {
+         flex-direction: row;
+     }
+     .main-card {
+         width: 50%;
+         margin: 0 1rem;
+         padding: 1rem;
+     }
+     .main-card div {
+         flex-direction: row;
+     }
+     .main ul li::before {
+         bottom: 0;
+         top: inherit;
+     }
+ }

@@ -1,0 +1,29 @@
+<div class="item" *ngIf="item !=null">
+    <div>
+        <img [src]="'https://server.ccpll.org/public/images/libros/' + item.imagen" alt="">
+    </div>
+    <article>
+        <h1>{{item.titulo}}</h1>
+        <p>
+            <b>Código:</b> {{item.codigo}}
+        </p>
+        <p>
+            <b>Colección:</b> {{item.coleccion}}
+        </p>
+        <p>
+            <b>Autor:</b> {{item.autor}}
+        </p>
+        <p>
+            <b>Editorial:</b> {{item.editorial}}
+        </p>
+        <p>
+            <b>Año:</b> {{item.anho}}
+        </p>
+        <p>
+            <b>Cantidad:</b> {{item.cantidad}}
+        </p>
+    </article>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

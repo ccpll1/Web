@@ -1,0 +1,29 @@
+.card {
+    margin: auto;
+    border-radius: 10px;
+    border: 2px dashed #14387f;
+    background: none;
+}
+
+p {
+    display: block;
+}
+
+article {
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 960px) {
+    .card {
+        width: 50%;
+    }
+    img {
+        margin-right: 2rem;
+    }
+    article {
+        flex-direction: row;
+    }
+}

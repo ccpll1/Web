@@ -1,0 +1,96 @@
+footer {
+    margin-top: 1rem;
+    background-size: contain;
+    background-position: center top;
+    background-size: cover;
+    background-image: url("../../assets/img/footer.png"), linear-gradient(184deg, #14387f, #0045ad);
+    color: #FFF;
+    box-shadow: 0 6px 8px 5px rgba(0, 0, 0, 0.64);
+}
+
+.container-footer {
+    padding: 3rem 0;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.container-footer .logo {
+    align-items: center;
+    display: flex;
+}
+
+.container-footer .logo, .container-footer .schedule, .container-footer .contact {
+    justify-self: center;
+}
+
+.contact li {
+    padding-bottom: 1rem;
+}
+
+.contact li i {
+    padding-right: 1rem;
+}
+
+.contact li::before {
+    content: "";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    position: absolute;
+}
+
+ul li p {
+    padding-left: 2rem;
+    line-height: 20px;
+}
+
+ul li p:nth-child(1) {
+    font-family: Work-Bold;
+}
+
+.title {
+    color: #FFF;
+    font-size: 20px;
+    display: block;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.title::after {
+    content: none;
+}
+
+.social-network {
+    display: flex;
+}
+
+.social-network span {
+    background: #fff;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #777777;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 1rem;
+}
+
+@media only screen and (min-width: 960px) {
+    .title {
+        font-size: 22px;
+    }
+    .container-footer {
+        grid-gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -1,0 +1,81 @@
+<div class="group-home">
+    <div class="colleft">
+        <swiper [config]="config" *ngIf="dataTempSlider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let item of dataTempSlider">
+                    <a [href]="item.link" target="_blank">
+                        <img [src]="'https://server.ccpll.org/public/images/SLIDER/' + item.imagen"
+                            style="width: 100%;">
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </swiper>
+        <div style="margin-top: 3rem;">
+            <h2 class="title">DESTACADOS</h2>
+            <div class="destacados band">
+                <div class="item item-dest-1">
+                    <a [href]="urlflyer" class="card">
+                        <img [src]="'https://server.ccpll.org/public/images/inicio/'+ flyer" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a [href]="urlcomunicado" class="card">
+                        <img [src]="'https://server.ccpll.org/public/images/inicio/'+ comunicado" alt="">
+                    </a>
+                </div>
+                <div class="item">
+                    <a [href]="urlinformativo" class="card">
+                        <img [src]="'https://server.ccpll.org/public/images/inicio/'+ informativo" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 3rem;">
+            <h2 class="title">EVENTOS ACADÉMICOS</h2>
+            <div class="band">
+                <div class="item" *ngFor="let item of dataTemp">
+                    <a routerLink="capacitacion/{{item.categoria}}/{{item.titulo}}" class="card">
+                        <img [src]="'https://server.ccpll.org/public/images/'+item.categoria +'/' + item.imagen" alt="">
+                        <article>
+                            <h1>{{item.titulo}}</h1>
+                            <p [innerHTML]="item.descripcion | innerhtml">
+                            </p>
+                            <span><a>Ver más</a></span>
+                        </article>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="colright">
+        <div *ngIf="destacado != null">
+            <a routerLink="capacitacion/{{destacado.categoria}}/{{destacado.titulo}}">
+                <img [src]="'https://server.ccpll.org/public/images/'+destacado.categoria +'/' + destacado.imagen"
+                    alt="" width="500">
+            </a>
+        </div>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0z3yAYHUvRI" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div>
+            <a [href]="urlsecondflyer">
+                <img [src]="'https://server.ccpll.org/public/images/inicio/'+ secondflyer" alt="">
+            </a>
+        </div>
+        <div>
+            <iframe width="560" height="250" [src]="video | youtubeSafeUrl" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+            </iframe>
+        </div>
+        <div>
+            <a>
+                <img src="./assets/img/anuncio.png" alt="">
+            </a>
+        </div>
+    </div>
+</div>

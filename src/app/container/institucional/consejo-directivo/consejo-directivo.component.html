@@ -1,0 +1,45 @@
+<h2 class="title">
+    Consejo Directivo
+</h2>
+<div class="consejo">
+    <div class="col-md-4 perfil" *ngFor="let item of consejod">
+    <!--<div class="col-md-4 perfil" *ngFor="let item of consejod" [swal]="show" (click)="info = item">-->
+        <!--<img [src]="'./assets/img/team/' + item.image" alt="">-->
+        <div class="perfil-inf">
+            <p>{{item.nombre}}</p>
+            <span>{{item.cargo}}</span>
+        </div>
+    </div>
+</div>
+<!--<img class="img" src="./assets/img/consejo.png" alt="">-->
+<p style="text-align: center;margin-top:1rem">
+    Consejo Directivo
+    <br>
+    2022- 2023
+</p>
+
+<swal #show>
+    <div class="modal" *swalPortal>
+        <div class="perfil">
+            <img [src]="'./assets/img/team/' + info.image" alt="">
+            <div class="perfil-inf">
+                <span>{{info.cargo}}</span>
+                <p>{{info.nombre}}</p>
+            </div>
+        </div>
+        <div class="cv">
+            <ul>
+                <span>FORMACIÓN ACADÉMICA:</span>
+                <li *ngFor="let formacionacademica of info.formacionacademica">
+                    {{formacionacademica}}
+                </li>
+            </ul>
+            <ul>
+                <span>ACTIVIDAD PROFESIONAL:</span>
+                <li *ngFor="let actividadprofesional of info.actividadprofesional">
+                    {{actividadprofesional}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</swal>

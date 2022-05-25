@@ -1,0 +1,88 @@
+.item .card {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid #00a1cd;
+    border-radius: 10px;
+}
+
+.card div {
+    background: #32b2d6;
+    color: #FFF;
+    border-radius: 6px;
+    padding: 10px;
+    height: 100%;
+    box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card div h1 {
+    color: #FFF;
+    line-height: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.card div a span:hover,
+.card a span:focus,
+.card a span:active {
+    background-color: #FFF;
+    color: #14387f;
+    border: 2px solid #FFF;
+}
+
+.card div span::after {
+    content: ' ';
+}
+
+article div {
+    text-align: center;
+}
+
+.item a {
+    margin: auto;
+    margin-top: 0.5rem;
+}
+
+.item a span {
+    border-radius: 10px;
+    border: 1px solid #00a1cd;
+    font-family: 'Work-Bold';
+    text-align: center;
+    color: #00a1cd;
+    padding: 2px 15px;
+}
+
+.options-modal {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.options-modal span {
+    border-radius: 10px;
+    border: 1px solid #00a1cd;
+    font-family: 'Work-Bold';
+    text-align: center;
+    color: #00a1cd;
+    padding: 2px 15px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.active-option {
+    color: #FFF !important;
+    background-color: #00a1cd;
+}
+
+@media only screen and (min-width: 960px) {
+    .band {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px 190px;
+    }
+    .options-modal {
+        flex-direction: row;
+    }
+}

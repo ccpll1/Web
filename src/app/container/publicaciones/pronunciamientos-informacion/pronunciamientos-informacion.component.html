@@ -1,0 +1,18 @@
+<h2 class="title" *ngIf="item !=null">
+    Pronunciamientos
+</h2>
+<div class="info-pron" *ngIf="item !=null">
+    <div class="img-decano-pron">
+        <img src="./assets/img/team/team6.jpg" alt="">
+        <span>Dr. Rubén Saavedra Rodríguez</span>
+        <p>Decano del Colegio de Contadores de La Libertad</p>
+    </div>
+    <div class="info-decano-pron">
+        <h2 class="title-blog">{{item.titulo}}</h2>
+        <p [innerHTML]="item.descripcion | innerhtml">
+        </p>
+    </div>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>

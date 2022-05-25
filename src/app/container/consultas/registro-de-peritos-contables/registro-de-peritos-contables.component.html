@@ -1,0 +1,45 @@
+<h2 class="title">
+    Registro de Peritos Contables
+</h2>
+<p>Consulte a través del buscador con su número de DNI</p>
+<div class="search">
+    <form [formGroup]="formulario" (ngSubmit)="search()">
+        <input type="text" class="form-control" placeholder="Documento de Identidad" formControlName="word"
+            [ngClass]="{ 'is-invalid': submitted && f.word.errors }">
+        <div *ngIf="submitted && f.word.errors" class="invalid-feedback">
+            <p *ngIf="f.word.errors.required">Ingrese número de documento</p>
+        </div>
+        <div class="group-button ">
+            <button id="buscar" type="button" class="btn btn-primary" (click)="search()">
+                <i class="fas fa-search"></i>
+                BUSCAR</button>
+            <button type="reset" class="btn btn-default disabled"><i class="fas fa-times"></i> LIMPIAR</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="dataTemp.length > 0">
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">
+                <p>Nombres</p>
+            </div>
+            <div class="col col-2">
+                <p>DNI</p>
+            </div>
+            <div class="col col-3">
+                <p>N° Colegiatura</p>
+            </div>
+        </li>
+        <li class="table-row"
+            *ngFor="let item of dataTemp | filter : searchString | paginate: { itemsPerPage: 10, currentPage: p }">
+            <div class="col col-1" data-label="Nombres:">{{item.nombrecompleto}}</div>
+            <div class="col col-2" data-label="DNI:">{{item.dni}}</div>
+            <div class="col col-3" data-label="N° Colegiatura:">{{item.n_mat}}</div>
+        </li>
+    </ul>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+<div class="loader-demo-box" *ngIf="preloadingstate">
+    <div class="circle-loader"></div>
+</div>
