@@ -809,3 +809,18 @@ header::after {
 .form-group {
     margin-bottom: 25px;
 }
+
+.btn__paga--aqui {
+    padding-top: 54px;
+    padding-bottom: 64px;
+    text-align: center;
+}
+.btn__paga--aqui a {
+    background-color: #00a1cd;
+    border-color: #00a1cd;
+    border-radius: 8px;
+    padding: 10px 24px;
+    color: white;
+    font-weight: 600;
+    font-size: 22px;
+}
